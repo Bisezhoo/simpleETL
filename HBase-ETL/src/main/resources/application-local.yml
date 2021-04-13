@@ -1,0 +1,31 @@
+# server 配置
+server:
+  servlet:
+    context-path: /
+  port: 60012
+  tomcat:
+    uri-encoding: UTF-8
+    # 加大tomcat最大连接数, 这里给400
+    accept-count: 500
+    max-threads: 500
+    max-connections: 500
+
+spring:
+  application:
+    name: HBase-ETL-Service
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 10
+        keep-alive: 3s
+        queue-capacity: 10
+  servlet:
+    multipart:
+      location:
+      max-file-size: 100MB
+      max-request-size: 150MB
+
+multipart:
+  maxFileSize: 10Mb
+  maxRequestSize: 50Mb
